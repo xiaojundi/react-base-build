@@ -4,9 +4,9 @@ var path = require("path")
 module.exports = {
  devtool: "inline-source-map",
  entry: [
-  "webpack-dev-server/client?http://127.0.0.1:8080/",
+  "webpack-dev-server/client?http://127.0.0.1:8280/",
   "webpack/hot/only-dev-server",
-  "./app"
+  "./resources"
  ],
 
  output: {
@@ -14,7 +14,7 @@ module.exports = {
   filename: "./bundle.js"
  },
  resolve: {
-  modulesDirectories: ["node_modules", "app"],
+  modulesDirectories: ["node_modules", "resources"],
   extensions: ["", ".js"]
  },
  module: {

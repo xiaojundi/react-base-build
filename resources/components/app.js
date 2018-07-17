@@ -4,7 +4,7 @@ class App extends React.Component {
 
     render(){
         return(
-            <div><h1>Hello React+Webasdfasdfpack</h1></div>
+            <div><h1>just for test</h1></div>
             )
     }
 }
