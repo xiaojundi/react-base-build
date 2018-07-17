@@ -24,7 +24,7 @@ class Login extends React.Component {
 	render(){
 		return(
 			<div>
-				<div className="login">login</div>
+				<div className="login">please login</div>
 				<div>
 					<label>userID</label>
 					<input type="text" onChange={v=>this.handleChange("userID",v.target.value)}/>

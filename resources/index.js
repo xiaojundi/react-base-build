@@ -2,18 +2,15 @@ import React from 'react'
 import {render} from 'react-dom'
 import App from 'components/app'
 import Login from 'container/login/login'
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
-
+import { HashRouter, Route, Redirect, Switch, Link } from 'react-router-dom'
 
 
 render(
-	<BrowserRouter>
+	<HashRouter>
 		<div>
-			<Switch>
-				<Route path='/login' component={Login}></Route>
-				<Route path='/register'></Route>
-			</Switch>
+			<Route exact path='/' component={Login} />
+			<Route path='/register' component={Login}/>
 		</div>
-	</BrowserRouter>, 
+	</HashRouter>, 
 	document.getElementById('app')
 )
