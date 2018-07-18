@@ -23,7 +23,7 @@ export function user(state=initState, action){
 		// case LOGOUT:
 		// 	return {...initState, redirectTo:'/login'}
 		default:
-			return state
+			return {key: 2000}
 	}
 } 
 
@@ -32,7 +32,7 @@ export function login(){
 	// 	return errorMsg('用户密码必须输入')
 	// }
 	return function(){
-		console.log("test")
+		console.log("asdfasdf")
 	}()
 
 	// dispatch=>{

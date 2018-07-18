@@ -20,8 +20,8 @@ class Login extends React.Component {
 		this.setState({user: event.target.value})
 	}
 	handleLogin(key, value){
-		console.log(this.props)
-		this.props.login({1:"123123"})
+		console.log(this.props.login)
+		//this.props.login({1:"123123"})
 	}
 	handleChange(key, value){
 		this.setState({
