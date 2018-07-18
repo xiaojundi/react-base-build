@@ -1,12 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { login } from '../../redux/user.redux'
 
-@connect( 
-	state => state.user,
-	{login}
-)
-class Login extends React.Component {
+class Register extends React.Component {
 	constructor(props){
 		super(props)
 		this.state={
@@ -20,8 +14,7 @@ class Login extends React.Component {
 		this.setState({user: event.target.value})
 	}
 	handleLogin(key, value){
-		console.log(this.props)
-		this.props.login({1:"123123"})
+		console.log(this.state)
 	}
 	handleChange(key, value){
 		this.setState({
@@ -31,7 +24,7 @@ class Login extends React.Component {
 	render(){
 		return(
 			<div>
-				<div className="login">please login</div>
+				<div className="login">Register</div>
 				<div>
 					<label>userID</label>
 					<input type="text" onChange={v=>this.handleChange("userID",v.target.value)}/>
@@ -40,11 +33,14 @@ class Login extends React.Component {
 					<label>password</label>
 					<input type="text" onChange={v=>this.handleChange("pwd",v.target.value)}/>
 				</div>
-				<button type="button" onClick={this.handleLogin}>login</button>
-				<button type="button" Link>register</button>
+				<div>
+					<label>email address</label>
+					<input type="text" onChange={v=>this.handleChange("pwd",v.target.value)}/>
+				</div>
+				<button type="button">sign up</button>
 			</div>
 		)
 	}
 }
 
-export default Login
+export default Register
