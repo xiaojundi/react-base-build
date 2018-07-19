@@ -2,10 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { login } from '../../redux/user.redux'
 
-@connect( 
-	state => state.user,
-	{login}
-)
 class Login extends React.Component {
 	constructor(props){
 		super(props)
@@ -20,8 +16,7 @@ class Login extends React.Component {
 		this.setState({user: event.target.value})
 	}
 	handleLogin(key, value){
-		console.log(this.props.login)
-		//this.props.login({1:"123123"})
+		this.props.login({user:key, pwd:value})
 	}
 	handleChange(key, value){
 		this.setState({
@@ -31,7 +26,7 @@ class Login extends React.Component {
 	render(){
 		return(
 			<div>
-				<div className="login">please login</div>
+				<div className="login">pleases login</div>
 				<div>
 					<label>userID</label>
 					<input type="text" onChange={v=>this.handleChange("userID",v.target.value)}/>
@@ -41,10 +36,25 @@ class Login extends React.Component {
 					<input type="text" onChange={v=>this.handleChange("pwd",v.target.value)}/>
 				</div>
 				<button type="button" onClick={this.handleLogin}>login</button>
-				<button type="button" Link>register</button>
+				<button type="button">register</button>
 			</div>
 		)
 	}
 }
 
-export default Login
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    login: login
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login)
